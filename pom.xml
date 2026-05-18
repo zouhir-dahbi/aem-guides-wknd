@@ -782,7 +782,7 @@ Bundle-DocURL:
                                     <executable>sh</executable>
                                     <arguments>
                                         <argument>-c</argument>
-                                        <argument>echo "[FM-VARS] WKND_THEME_COLOR=${env.WKND_THEME_COLOR:-NOT_SET}"</argument>
+                                        <argument>echo "[FM-VARS] WKND_THEME_COLOR=${WKND_THEME_COLOR:-NOT_SET}"</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
