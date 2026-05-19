@@ -749,8 +749,9 @@ Bundle-DocURL:
             FM Pipeline Variables smoke-test profile.
             Activated whenever CM_BUILD is set (i.e. every FM build).
             Reads two variables injected by Flow Manager:
-              WKND_THEME_COLOR  - plain string  (value visible in logs)
-              WKND_API_KEY      - secretString  (value masked in logs; only non-empty check)
+              CM_CUSTOM_VAR_WKND_THEME_COLOR  - plain string  (value visible in logs)
+              CM_CUSTOM_VAR_WKND_API_KEY      - secretString  (value masked in logs; only non-empty check)
+            Flow Manager prefixes all customer pipeline variables with CM_CUSTOM_VAR_.
             The exec:exec goal echoes WKND_THEME_COLOR so it appears in the build log,
             confirming FM injected plain variables correctly.
             The enforcer:enforce goal fails the build if WKND_API_KEY is absent,
@@ -782,7 +783,7 @@ Bundle-DocURL:
                                     <executable>sh</executable>
                                     <arguments>
                                         <argument>-c</argument>
-                                        <argument>echo "[FM-VARS] WKND_THEME_COLOR=${WKND_THEME_COLOR:-NOT_SET}"</argument>
+                                        <argument>echo "[FM-VARS] WKND_THEME_COLOR=${CM_CUSTOM_VAR_WKND_THEME_COLOR:-NOT_SET}"</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -804,8 +805,8 @@ Bundle-DocURL:
                                 <configuration>
                                     <rules>
                                         <requireEnvironmentVariable>
-                                            <variableName>WKND_API_KEY</variableName>
-                                            <message>[FM-VARS] WKND_API_KEY secret was not injected by Flow Manager</message>
+                                            <variableName>CM_CUSTOM_VAR_WKND_API_KEY</variableName>
+                                            <message>[FM-VARS] CM_CUSTOM_VAR_WKND_API_KEY secret was not injected by Flow Manager</message>
                                         </requireEnvironmentVariable>
                                     </rules>
                                 </configuration>
