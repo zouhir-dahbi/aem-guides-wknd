@@ -30,7 +30,7 @@ on:
         default: 'true'
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: gh-hosted
     # Only release from `main` branch
     if: github.repository == 'adobe/aem-guides-wknd' && github.ref == 'refs/heads/main'
     steps:
