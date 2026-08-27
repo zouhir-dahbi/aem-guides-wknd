@@ -42,7 +42,11 @@
         <module>ui.content</module>
         <module>ui.content.sample</module>
         <module>it.tests</module>
-        <module>dispatcher</module>
+        <!-- fm-pipeline-smoketest: dispatcher deliberately dropped from the reactor.
+             A standard FM build&deploy has no way to exclude the dispatcher target,
+             and dispatcher deploys fully replace the customer's live vhost/farm/filter
+             config (no merge mode). Test dispatcher separately via a dedicated
+             dispatcher-only FM pipeline against a disposable environment. -->
         <module>ui.tests</module>
     </modules>
 
