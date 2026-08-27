@@ -2,12 +2,11 @@
 <workspaceFilter version="1.0">
 
     <!-- Content Filters -->
-    <filter root="/content/wknd" />
-    <!-- Changing the filter mode to merge will preserve any existing content on the target environment
+    <!-- FM pipeline smoketest: merge mode so this package never deletes pre-existing
+         content on a target environment (needed to be safe against real customer tenants) -->
     <filter root="/content/wknd" mode="merge"/>
-    -->
     <filter root="/content/dam/wknd" mode="update"/>
-    <filter root="/content/experience-fragments/wknd"/>
+    <filter root="/content/experience-fragments/wknd" mode="merge"/>
 
     <!-- Force Policy and Template Updates -->
     <filter root="/conf/wknd/settings/wcm" />
@@ -17,5 +16,5 @@
     <!-- WKND Member Group-->
     <filter root="/home/groups/wknd" mode="merge" />
     <!-- Sample User-->
-    <filter root="/home/users/wknd" />
+    <filter root="/home/users/wknd" mode="merge" />
 </workspaceFilter>
