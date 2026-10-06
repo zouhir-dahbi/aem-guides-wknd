@@ -61,9 +61,12 @@
                         </jackrabbit-nodetypes>
                         <jackrabbit-filter>
                             <options>
-                                <validRoots>/conf,/content,/content/experience-fragments,/content/dam,/content/cq:tags</validRoots>
+                                <validRoots>/conf,/content,/content/experience-fragments,/content/dam,/content/cq:tags,/oak:index</validRoots>
                             </options>
                         </jackrabbit-filter>
+                        <jackrabbit-oakindex>
+                            <isDisabled>true</isDisabled>
+                        </jackrabbit-oakindex>
                     </validatorsSettings>
                     <dependencies>
                         <dependency>
