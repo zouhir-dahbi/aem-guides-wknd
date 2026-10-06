@@ -1,0 +1,4 @@
+{
+  "queryLimitInMemory": 500000,
+  "queryLimitReads": 5000000
+}
