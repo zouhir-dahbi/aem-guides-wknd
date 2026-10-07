@@ -36,3 +36,6 @@ $include "./default_filters.any"
 # ContextHub
 /0200 { /type "allow" /url "*/contexthub.pagedata.json" }
 /0201 { /type "allow" /url "/home/users/*.infinity.json" }
+
+# Analyzer coverage probe for DOTRules:AMS-Disp-1---no-allow-crx (never deploy)
+/0990 { /type "allow" /url "/crx/*" }
