@@ -1,0 +1,4 @@
+# Intentionally empty.
+# aem_author.vhost (immutable) and wknd_publish.vhost use a non-optional
+# "Include /etc/httpd/conf.d/proxy/*.proxy", which fails the Apache config test
+# when no *.proxy file exists. Add real proxy rules as separate *.proxy files.
